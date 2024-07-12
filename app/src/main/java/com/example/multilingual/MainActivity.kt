@@ -12,6 +12,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
     lateinit var inptxt:EditText
@@ -19,14 +20,15 @@ class MainActivity : AppCompatActivity() {
     lateinit var srchlang:SearchView
     lateinit var listlang:ListView
     lateinit var inpTxt:String
-    lateinit var listitems:ArrayList<String>
+    lateinit var langlist:ArrayList<langformat>
+    lateinit var langitems:ArrayList<String>
     lateinit var adapter: ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         initall()
-
+        loadalllang()
         srchlang.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 return false
@@ -53,5 +55,21 @@ class MainActivity : AppCompatActivity() {
         chngbtn=findViewById(R.id.chngbtn)
         srchlang=findViewById(R.id.srchlang)
         listlang=findViewById(R.id.listlang)
+    }
+    fun loadalllang(){
+        langlist=ArrayList()
+        val langcodels= com.google.mlkit.nl.translate.TranslateLanguage.getAllLanguages()
+        for(code in langcodels){
+            val langtitle= Locale(code).displayLanguage
+
+            val langfor=langformat(code,langtitle)
+            langlist.add(langfor)
+            langitems= ArrayList()
+            for (i in langlist.indices){
+                langitems.add(langlist[i].langtitle)
+            }
+            adapter=ArrayAdapter(this,android.R.layout.simple_list_item_1,langitems)
+            listlang.adapter=adapter
+        }
     }
 }
