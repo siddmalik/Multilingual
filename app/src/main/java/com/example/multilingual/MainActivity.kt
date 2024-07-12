@@ -1,6 +1,8 @@
 package com.example.multilingual
 
 import android.os.Bundle
+import android.widget.Adapter
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
 import android.widget.ListView
@@ -17,11 +19,25 @@ class MainActivity : AppCompatActivity() {
     lateinit var srchlang:SearchView
     lateinit var listlang:ListView
     lateinit var inpTxt:String
+    lateinit var listitems:ArrayList<String>
+    lateinit var adapter: ArrayAdapter<String>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
         initall()
+
+        srchlang.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return false
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                adapter.filter.filter(newText)
+                return false
+            }
+
+        })
         inpTxt=inptxt.text.toString()
         chngbtn.setOnClickListener(){
             if (inpTxt.isEmpty()) {
