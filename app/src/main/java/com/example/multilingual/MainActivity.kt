@@ -1,7 +1,10 @@
 package com.example.multilingual
 
+import android.graphics.Color
 import android.os.Bundle
+import android.view.View
 import android.widget.Adapter
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
@@ -12,6 +15,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.multilingual.R.layout.itemstyle
+import com.example.multilingual.databinding.ActivityMainBinding
 import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
@@ -19,34 +24,19 @@ class MainActivity : AppCompatActivity() {
     lateinit var chngbtn:Button
     lateinit var srchlang:SearchView
     lateinit var listlang:ListView
-    lateinit var inpTxt:String
     lateinit var langlist:ArrayList<langformat>
-    lateinit var langitems:ArrayList<String>
-    lateinit var adapter: ArrayAdapter<String>
+    lateinit var langitems:ArrayList<Langitems>
+    private lateinit var binding:ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_main)
+        binding=ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         initall()
         loadalllang()
-        srchlang.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
-            override fun onQueryTextSubmit(query: String?): Boolean {
-                return false
-            }
 
-            override fun onQueryTextChange(newText: String?): Boolean {
-                adapter.filter.filter(newText)
-                return false
-            }
-
-        })
-        inpTxt=inptxt.text.toString()
-        chngbtn.setOnClickListener(){
-            if (inpTxt.isEmpty()) {
-                Toast.makeText(this,"Please enter text", Toast.LENGTH_LONG).show()
-                return@setOnClickListener
-            }
-        }
 
     }
 
@@ -66,10 +56,10 @@ class MainActivity : AppCompatActivity() {
             langlist.add(langfor)
             langitems= ArrayList()
             for (i in langlist.indices){
-                langitems.add(langlist[i].langtitle)
+                var langi=Langitems(langlist[i].langtitle)
+                langitems.add(langi)
             }
-            adapter=ArrayAdapter(this,android.R.layout.simple_list_item_1,langitems)
-            listlang.adapter=adapter
+            binding.listlang.adapter=Adapter(this,langitems)
         }
     }
 }

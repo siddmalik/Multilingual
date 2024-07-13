@@ -60,8 +60,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/srchview"
         android:iconifiedByDefault="false"
         android:layoutDirection="rtl"
         android:queryBackground="@android:color/transparent"
@@ -76,8 +77,10 @@
         android:layout_height="391dp"
         android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
+        android:background="@drawable/lstview"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/srchlang" />
+        app:layout_constraintTop_toBottomOf="@+id/srchlang"
+        tools:listitem="@layout/itemstyle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
