@@ -7,31 +7,34 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
     <TextView
         android:id="@+id/quessay"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="45dp"
-        android:alpha=".5"
+        android:layout_marginTop="100px"
         android:fontFamily="@font/comfortaa_variablefont_wght"
         android:text="What do you want to say?"
         android:textColor="@color/black"
-        android:textSize="40px"
+        android:textSize="45px"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-<EditText
+    <EditText
         android:id="@+id/inptxt"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="25dp"
-        android:background="@null"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginStart="60px"
+        android:layout_marginTop="73px"
+        android:layout_marginEnd="60px"
+        android:background="@drawable/shape"
         android:ems="10"
         android:fontFamily="@font/comfortaa_variablefont_wght"
         android:hint="Your Message"
-        android:inputType="text"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textColorHint="#4D000000"
@@ -39,48 +42,24 @@
         android:textSize="65px"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/quessay" />
+        app:layout_constraintTop_toBottomOf="@+id/quessay">
+    </EditText>
 
-<Button
+    <Button
         android:id="@+id/chngbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="25dp"
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="83px"
         android:backgroundTint="@color/white"
-        android:text="How to say in"
-        android:textColor="@color/black"
         android:fontFamily="@font/comfortaa_variablefont_wght"
-        android:textFontWeight="1000"
+        android:text="Select Language"
+        android:textColor="@color/texthigh"
+        android:textSize="32px"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <SearchView
-        android:id="@+id/srchlang"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/srchview"
-        android:iconifiedByDefault="false"
-        android:layoutDirection="rtl"
-        android:queryBackground="@android:color/transparent"
-        android:queryHint="Search the language"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inptxt" />
-
-    <ListView
-        android:id="@+id/listlang"
-        android:layout_width="match_parent"
-        android:layout_height="391dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:background="@drawable/lstview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/srchlang"
-        tools:listitem="@layout/itemstyle" />
 </androidx.constraintlayout.widget.ConstraintLayout>
