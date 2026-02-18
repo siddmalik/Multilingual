@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1017307078453",
+    "project_id": "multilingual-c53ff",
+    "storage_bucket": "multilingual-c53ff.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1017307078453:android:645fe239afdd2c6d2c367c",
+        "android_client_info": {
+          "package_name": "com.example.multilingual"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDXFb9bBNokTtVFeiMo8tTMWLgiq7JGw0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

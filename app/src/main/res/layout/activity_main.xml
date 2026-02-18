@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/backgroundcolor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/quessay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:fontFamily="@font/comfortaa_variablefont_wght"
+        android:text="What do you want to say?"
+        android:textColor="@color/black"
+        android:textSize="45px"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/inptxt"
+        android:layout_width="match_parent"
+        android:layout_height="550dp"
+        android:layout_marginStart="60px"
+        android:layout_marginTop="73px"
+        android:layout_marginEnd="60px"
+        android:background="@drawable/shape"
+        android:ems="10"
+        android:fontFamily="@font/comfortaa_variablefont_wght"
+        android:hint="Your Message"
+        android:inputType="textMultiLine"
+        android:scrollbars="vertical"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#4D000000"
+        android:textFontWeight="600"
+        android:textSize="65px"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/quessay">
+    </EditText>
+
+    <Button
+        android:id="@+id/chngbtn"
+        android:layout_width="match_parent"
+        android:layout_height="130px"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="83px"
+        android:backgroundTint="@color/white"
+        android:fontFamily="@font/comfortaa_variablefont_wght"
+        android:text="Select Language"
+        android:textColor="@color/texthigh"
+        android:textSize="32px"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
