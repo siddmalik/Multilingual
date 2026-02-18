@@ -32,7 +32,7 @@ import com.google.mlkit.nl.translate.TranslateLanguage
 import org.intellij.lang.annotations.Language
 import java.util.Locale
 
-class git MainActivity2 : AppCompatActivity() {
+class MainActivity2 : AppCompatActivity() {
     var inptxt: String = ""
     lateinit var srclangcode:String
     lateinit var langbtn:Button
